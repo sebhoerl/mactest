@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 project(SOCS)
 
 find_package(PkgConfig)
-find_package(Boost REQUIRED COMPONENTS system thread python)
+find_package(Boost REQUIRED COMPONENTS system thread python3)
 find_package(OpenGL)
 find_package(PythonLibs)
 
