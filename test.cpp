@@ -16,6 +16,10 @@ struct State {
 
 // --------------- GUI -----------------
 
+void btn_click(Gtk::Button* btn) {
+	btn->set_label("bla");
+}
+
 void gui_process(State& state) {
 	printf("GUI Process\n");
 
@@ -23,6 +27,8 @@ void gui_process(State& state) {
 	Gtk::Window mainWindow;
 
 	Gtk::Button btn("test");
+	btn.signal_clicked().connect(sigc::bind(sigc::ptr_fun(btn_click), &btn));
+
 	mainWindow.add(btn);
 	mainWindow.show_all();
 
